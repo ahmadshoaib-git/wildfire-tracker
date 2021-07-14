@@ -1,0 +1,245 @@
+@font-face {
+  font-family: "Kanit";
+  src: URL("../font/Kanit-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RussoOne";
+  src: URL("../font/RussoOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Mada-Light";
+  src: URL("../font/Mada-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Mada-Regular";
+  src: URL("../font/Mada-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Mada-Bold";
+  src: URL("../font/Mada-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: URL("../font/Roboto-Medium.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+.header {
+  padding: 10px;
+  background-color: firebrick;
+  color: #ececee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.header-icon {
+  font-size: 1.5rem;
+  margin-right: 0.2em;
+}
+
+.header h1 {
+  font-size: 25px;
+  font-family: Kanit, serif;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-powered-by {
+  margin-top: 0.4em;
+  font-weight: 300;
+  margin-left: 0.2em;
+  font-size: 16px;
+  font-family: Roboto, serif;
+}
+
+.map {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.location-icon {
+  font-size: 1.2rem;
+  color: red;
+  cursor: pointer;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  background-color: red;
+  color: #ececee;
+  height: 16px;
+  width: auto;
+  padding: 0px 0.4em;
+  margin-right: 0.45em;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 12px;
+  font-family: Mada-Bold, serif;
+}
+
+
+.chip:hover {
+  background-color: rgba(255, 0, 0, 0.85);
+  color: #fff;
+}
+
+.source-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #000;
+  color: #ececee;
+  height: 28px;
+  width: fit-content;
+  border-radius: 15px;
+  font-size: 16px;
+  padding: 0px 0.4em;
+}
+
+.source-section span {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.close-info {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  color: #000;
+  cursor: pointer;
+}
+
+.country-origin{
+  display: flex;
+  align-items: center;
+  background-color: #0080ff;
+  color: #ececee;
+  height: 24px;
+  width: fit-content;
+  padding: 0px 0.5em;
+  margin-right: 0.4em;
+  text-decoration: none;
+  border-radius: 15px;
+  font-size: 14px;
+  font-family: Mada-Bold, serif;
+  margin-top: 10px;
+}
+.country-origin svg {
+  font-size: 16px;
+}
+
+.country-origin span {
+  margin-left: 5px;
+}
+
+.loading img {
+  width: 400px;
+}
+
+.loading h2 {
+  font-family: Roboto, serif;
+  margin-top: -100px;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.location-info {
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  width: 400px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ececee;
+  border-radius: 10px;
+  font-size: 18px;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+@media screen and (max-width: 375px) {
+  .location-info {
+    width: 80%;
+    top: 80px;
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .header h1 {
+    flex-direction: column;
+  }
+  .location-info {
+    width: 80%;
+    top: 80px;
+    right: 20px;
+  }
+}
+
+
+@media screen and (max-width: 495px) {
+  
+  .location-info {
+    top: 120px;
+    right: 5px;
+  }
+}
+
+
+.location-info h3 {
+  font-size: 1.15em;
+  font-family: Roboto, serif;
+  margin: 0;
+  padding: 0;
+}
+
+.location-info ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 5px 0 5px 5px;
+}
+
+.location-info li {
+  padding: 0;
+  font-family: Mada-Regular, serif;
+  font-size: 16px;
+}
